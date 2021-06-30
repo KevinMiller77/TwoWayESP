@@ -58,9 +58,9 @@ void TwoWayESP::SendString(String input) {
     s_OutgoingPacket.size = size;
 
     memset(s_OutgoingPacket.message, 0, sizeof(s_OutgoingPacket.message));
-    input.getBytes(s_OutgoingPacket.message, input.length());
+    input.getBytes(s_OutgoingPacket.message, sizeof(s_OutgoingPacket.message));
 
-	esp_err_t result = esp_now_send(m_Peer.peer_addr, (uint8_t*)&s_OutgoingPacket, sizeof(uint8_t) + size);
+	esp_err_t result = esp_now_send(m_Peer.peer_addr, (uint8_t*)&s_OutgoingPacket, size);
 
     if (result != ESP_OK) {
         Serial.println("[TwoWayESP] There was an error during send!");
