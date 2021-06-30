@@ -14,7 +14,7 @@ TwoWayESP::Packet TwoWayESP::s_IncomingPacket;
 bool TwoWayESP::Begin(const uint8_t macAddress[6]) {
     // Set WiFi mode to STA
 	WiFi.mode(WIFI_STA);
-    Serial.print("My mac address: ");
+    Serial.print("[ESPNOW] My mac address: ");
     Serial.println(WiFi.macAddress());
     
 
@@ -74,8 +74,8 @@ void TwoWayESP::cb_OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t sta
 }
 
 void TwoWayESP::cb_OnDataRecv(const uint8_t* mac_addr, const uint8_t* incomingData, int len) {
-
 	if (m_CanRead) {
+        Serial.println("[ESPNOW] Could already read when data came in!");
         return;
     }
     

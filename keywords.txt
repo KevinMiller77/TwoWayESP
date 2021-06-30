@@ -2,9 +2,9 @@
 # Methods and Functions
 #######################################
 
-Begin	KEYWORD2
-Available	KEYWORD2
-GetString	KEYWORD2
-GetBytes	KEYWORD2
-SendString	KEYWORD2
-SendBytes	KEYWORD2
+TwoWayESP::Begin    	    KEYWORD2
+TwoWayESP::Available    	KEYWORD2
+TwoWayESP::GetString    	KEYWORD2
+TwoWayESP::GetBytes 	    KEYWORD2
+TwoWayESP::SendString   	KEYWORD2
+TwoWayESP::SendBytes    	KEYWORD2
